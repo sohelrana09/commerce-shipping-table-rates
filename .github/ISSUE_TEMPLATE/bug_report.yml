@@ -1,0 +1,59 @@
+name: Bug report
+description: A rate, the webhook, the Admin page or the installation doesn't work as described.
+labels: [ bug ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Security problems go through a private report instead, see SECURITY.md.
+        Never paste `.env` or `.aio` values, workspace credentials, tokens or customer data here.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What did you see, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include the method (CSV export or JSON from SHIPPING_METHODS) and the cart (address, items, weights, subtotal). Leave out real customer addresses.
+      placeholder: |
+        1. Create a method with ...
+        2. Quote a cart (or check out) with ...
+        3. ...
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Rates (which methods and prices a cart gets)
+        - Shipping webhook or signatures
+        - Admin page or CSV import/export
+        - Installation or App Management
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: commerce
+    attributes:
+      label: Commerce
+      options:
+        - Adobe Commerce as a Cloud Service (SaaS)
+        - Adobe Commerce on cloud infrastructure (PaaS)
+        - Adobe Commerce on-premises
+        - Not relevant
+  - type: input
+    id: version
+    attributes:
+      label: Shipping Table Rates version or commit
+      placeholder: v0.1.0 or 2be2493
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Output of `aio app logs`, browser console errors or a screenshot. Remove any secrets first.
+      render: text

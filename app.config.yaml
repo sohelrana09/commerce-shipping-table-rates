@@ -1,0 +1,24 @@
+extensions:
+  commerce/backend-ui/2:
+    $include: src/commerce-backend-ui-2/ext.config.yaml
+  commerce/configuration/1:
+    $include: src/commerce-configuration-1/ext.config.yaml
+  commerce/extensibility/1:
+    $include: src/commerce-extensibility-1/ext.config.yaml
+productDependencies:
+  - code: COMMC
+    minVersion: 2.4.5
+    maxVersion: 3.0.0
+configSchema:
+  title: Shipping Table Rates setup
+  description: Runtime settings for the Shipping Table Rates app.
+  properties:
+    - title: Logging level
+      type: string
+      description: "How much the app logs. One of: debug, info, warn, error."
+      envKey: LOG_LEVEL
+      default: info
+    - title: Commerce webhook public key
+      type: string
+      description: "The PEM public key from Stores > Configuration > Adobe Services > Webhooks (Digital Signature Configuration). The shipping webhook rejects requests it can't verify with this key."
+      envKey: COMMERCE_WEBHOOK_PUBLIC_KEY

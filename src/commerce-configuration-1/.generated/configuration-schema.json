@@ -1,0 +1,49 @@
+[
+  {
+    "default": true,
+    "label": "Offer table rates at checkout",
+    "name": "ratesEnabled",
+    "type": "boolean"
+  },
+  {
+    "default": "tablerates",
+    "label": "Carrier code (letters, digits and underscores; must match the registered carrier)",
+    "name": "carrierCode",
+    "type": "text"
+  },
+  {
+    "default": "Table Rates",
+    "label": "Carrier title shown at checkout",
+    "name": "carrierTitle",
+    "type": "text"
+  },
+  {
+    "default": "kg",
+    "label": "Weight unit used by the store",
+    "name": "weightUnit",
+    "options": [
+      {
+        "label": "Kilograms (kg)",
+        "value": "kg"
+      },
+      {
+        "label": "Pounds (lbs)",
+        "value": "lbs"
+      }
+    ],
+    "selectionMode": "single",
+    "type": "list"
+  },
+  {
+    "default": "",
+    "label": "Fallback price when the rate tables can't be read (empty: offer nothing)",
+    "name": "fallbackPrice",
+    "type": "text"
+  },
+  {
+    "default": "Standard shipping",
+    "label": "Fallback method title",
+    "name": "fallbackTitle",
+    "type": "text"
+  }
+]

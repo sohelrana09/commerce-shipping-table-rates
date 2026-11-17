@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/sohelrana09/commerce-shipping-table-rates/security/advisories/new
+    about: Please report security problems privately, not as a public issue.
+  - name: Adobe Commerce extensibility documentation
+    url: https://developer.adobe.com/commerce/extensibility/
+    about: Questions about Adobe Commerce, App Builder, webhooks or out-of-process shipping themselves.

@@ -1,0 +1,11 @@
+extensions:
+  # Business configuration shown in App Management. Do not remove.
+  - extensionPointId: commerce/configuration/1
+  # Required for App Management. Do not remove.
+  - extensionPointId: commerce/extensibility/1
+  # The Shipping Table Rates Admin page. Do not remove.
+  - extensionPointId: commerce/backend-ui/2
+apis:
+  - code: AdobeIOManagementAPISDK
+  - code: CloudIntegrationSDK
+  - code: AppBuilderDataServicesSDK

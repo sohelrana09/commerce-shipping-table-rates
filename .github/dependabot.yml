@@ -1,0 +1,27 @@
+# Weekly dependency updates. Minor and patch versions arrive grouped in one pull request; major versions come
+# one by one, since they usually need code changes. Security updates are separate and immediate.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types: [ minor, patch ]
+    ignore:
+      # The actions run on Node 24 (engines, .nvmrc, runtime: nodejs:24): its types follow that line.
+      - dependency-name: "@types/node"
+        versions: [ ">=25" ]
+      # Held back by Adobe's tooling: @adobe/aio-commerce-lib-app needs TypeScript 6 (peer), and its build
+      # hook installs Babel 7 for the Admin page, whose Parcel transformer requires @babel/core 7.
+      - dependency-name: typescript
+        update-types: [ version-update:semver-major ]
+      - dependency-name: "@babel/*"
+        update-types: [ version-update:semver-major ]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
